@@ -1,6 +1,12 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import { HashRouter as Router, Route } from 'react-router-dom'
 import './App.css';
+import ScreenTwo from '../ScreenTwo/ScreenTwo';
+import ScreenOne from './ScreenOne/ScreenOne';
+import ScreenThree from '../ScreenThree/ScreenThree';
+import ScreenFour from '../ScreenFour/ScreenFour';
+import ScreenFive from '../ScreenFive/ScreenFive';
 
 function App() {
 
@@ -14,16 +20,16 @@ function App() {
       <Route path='/' exact>
         <ScreenOne />
       </Route>
-      <Route path='/screenTwo' exact>
+      <Route path='/screentwo' exact>
         <ScreenTwo />
       </Route>
-      <Route path='/ScreenThree' exact>
+      <Route path='/Screenthree' exact>
         <ScreenThree />
       </Route>
-      <Route path='/screenFour' exact>
+      <Route path='/screenfour' exact>
         <ScreenFour />
       </Route>
-      <Route path='/screenFive' exact>
+      <Route path='/screenfive' exact>
         <ScreenFive />
       </Route>
       </div>

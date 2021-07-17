@@ -4,5 +4,21 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// import { applyMiddleware, createStore, combineReducers } from "redux";
+import { Provider } from "react-redux";
+// import logger from "redux-logger";
+
+// Reducers
+
+// Store
+
+// Provider
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
 registerServiceWorker();
