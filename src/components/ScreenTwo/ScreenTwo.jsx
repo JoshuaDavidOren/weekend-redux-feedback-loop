@@ -10,7 +10,10 @@ const dispatch = useDispatch();
 const history = useHistory();
 const [support, setSupport] = useState('');
 
-
+const historyTheClick = () => {
+    event.preventDefault();
+    history.push('/')
+}
 
 const handleTheClick = () => {
     event.preventDefault();
@@ -45,6 +48,7 @@ return(
   </tbody>
 </table>
     <button type='submit'>Next</button>
+    <button onClick={() => historyTheClick()}>Back</button>
 </form>
 )
 }

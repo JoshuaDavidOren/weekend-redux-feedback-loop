@@ -10,6 +10,11 @@ const dispatch = useDispatch();
 const history = useHistory();
 const [comments, setComments] = useState('');
 
+const historyTheClick = () => {
+    event.preventDefault();
+    history.push('/screenthree')
+}
+
 const handleTheClick = () => {
     event.preventDefault();
 
@@ -27,6 +32,7 @@ return(
     <h1>Leave a comment on how you feel</h1>
     <input type="text" placeholder='Put your thoughts here' onChange={(evt) => setComments(evt.target.value)}/>
     <button onClick={() => handleTheClick()}>Next</button>
+    <button onClick={() => historyTheClick()}>Back</button>
 </section>
 )
 }

@@ -13,6 +13,11 @@ const understandingReducer = useSelector((store) => store.understandingReducer);
 const supportReducer = useSelector((store) => store.supportReducer);
 const commentsReducer = useSelector((store) => store.commentsReducer);
 
+const historyTheClick = () => {
+    event.preventDefault();
+    history.push('/screenfour')
+}
+
 const handleTheClick = () => {
     event.preventDefault();
 // axios call to send the feedback object to the database
@@ -82,6 +87,7 @@ return(
         </tbody>
     </table>
     <button onClick={() => handleTheClick()}>Next</button>
+     <button onClick={() => historyTheClick()}>Back</button>
 </section>
 )
 }
