@@ -12,10 +12,17 @@ const welcomeToTheStore = (state = ['Hi do you have any peaches'], action) => {
   return state
 }
 
+const angryReducer = (state = '', action)  => {
+  if (action.type === 'SCREAMING_SNAKE_CASE'){
+    return action.payload;
+  }
+  return state;
+}
 // Store
 const theStore = createStore(
   combineReducers({
-    welcomeToTheStore
+    welcomeToTheStore,
+    angryReducer
   }),
   applyMiddleware(logger)
 )
