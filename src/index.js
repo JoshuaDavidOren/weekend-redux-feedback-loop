@@ -21,13 +21,13 @@ const supportReducer = (state = '', action) => {
   }
   return state;
 };
-const commentsReducer = (state = '', action) => {
+const understandingReducer = (state = '', action) => {
   if (action.type === "SCREAMING_SNAKE-CABOB_CASE") {
     return action.payload;
   }
   return state;
 };
-const understandingReducer = (state = "", action) => {
+const commentsReducer = (state = "", action) => {
   if (action.type === "cameled_SCREAMS-with_SNAKES-and_CABOBS-case") {
     return action.payload;
   }

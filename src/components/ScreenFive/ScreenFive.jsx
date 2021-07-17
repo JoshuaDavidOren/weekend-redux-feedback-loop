@@ -55,7 +55,32 @@ const handleTheClick = () => {
 //This button handles the traversing pages and dispatching information. 
 return(
 <section>
-    <h1>Five</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Questions</th>
+                <th>Your Answers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><h3>Feelings</h3></td>
+                <td>{feelingsReducer}</td>
+            </tr>
+            <tr>
+                <td><h3>Support</h3></td>
+                <td>{supportReducer}</td>
+            </tr>
+            <tr>
+                <td><h3>Understanding</h3></td>
+                <td>{understandingReducer}</td>
+            </tr>
+            <tr>
+                <td><h3>Comments</h3></td>
+                <td>{commentsReducer}</td>
+            </tr>
+        </tbody>
+    </table>
     <button onClick={() => handleTheClick()}>Next</button>
 </section>
 )
