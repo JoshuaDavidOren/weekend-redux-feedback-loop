@@ -1,22 +1,26 @@
 import "./ScreenFive.css";
 // import { useState } from "react";
-// import { useSelector, useDispatch } from "react-redux";
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 
 
 function ScreenFive() {
-
+const dispatch = useDispatch();
 const history = useHistory();
+const feelingsReducer = useSelector((store) => store.feelingsReducer);
+const understandingReducer = useSelector((store) => store.understandingReducer);
+const supportReducer = useSelector((store) => store.supportReducer);
+const commentsReducer = useSelector((store) => store.commentsReducer);
 
 const handleTheClick = () => {
     event.preventDefault();
 // axios call to send the feedback object to the database
     axios({
         method: 'POST',
-        url: '/',
+        url: '/post',
         data: {
-            feeling: feelingReducer,
+            feeling: feelingsReducer,
             understanding: understandingReducer,
             support: supportReducer, 
             comments: commentsReducer
@@ -28,7 +32,23 @@ const handleTheClick = () => {
     .catch((err) => {
         console.log('axios Post error', err);
     });
-    
+    // dispatch to reset the values of the reducers
+    dispatch({
+        type: 'SCREAMING_SNAKE_CASE',
+        payload: ''
+    });
+    dispatch({
+        type: "SCREAMING-CABOB-CASE",
+        payload: ''
+    });
+    dispatch({
+        type: "SCREAMING_SNAKE-CABOB_CASE",
+        payload: ''
+    });
+    dispatch({
+        type: "cameled_SCREAMS-with_SNAKES-and_CABOBS-case",
+        payload: ''
+    });
     history.push('/');
 
 }
