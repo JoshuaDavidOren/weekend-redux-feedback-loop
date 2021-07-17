@@ -14,7 +14,7 @@ const handleTheClick = () => {
 
     dispatch({
         type: 'SCREAMING_SNAKE_CASE',
-        payload: angry  
+        payload: O_M_G_SNAKES  
     });
     history.push('/screenthree');
 
