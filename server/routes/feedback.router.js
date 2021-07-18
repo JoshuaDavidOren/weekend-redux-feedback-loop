@@ -30,7 +30,7 @@ router.post("/", (req, res) => {
 // GET all feedback that have been placed.
 router.get('/', (req, res) => {
 
-    pool.query('SELECT * FROM "feedback";').then((result) => {
+    pool.query('SELECT * FROM "feedback" ORDER BY id DESC;').then((result) => {
         res.send(result.rows);
     }).catch((err) => {
         console.log('Error GET ', err);
