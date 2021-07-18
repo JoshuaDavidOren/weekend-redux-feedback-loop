@@ -53,4 +53,19 @@ router.delete('/:id', (req, res) => {
         });
 })
 
+router.put("/:id", (req, res) => {
+    qText = 'UPDATE "feedback" SET "flagged" = NOT"flagged" WHERE "id" = $1';
+
+    pool.query(qText, [req.params.id])
+        .then((result) => {
+            console.log(qText);
+            console.log(req.params.id);
+            res.sendStatus(201);
+        })
+        .catch((err) => {
+            console.log("Error PUTing", err);
+            res.sendStatus(500);
+        });
+});
+
 module.exports = router;

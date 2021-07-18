@@ -13,6 +13,7 @@ app.use(express.static('build'));
 app.use('/post', feedBackRouter);
 app.use('/get', feedBackRouter);
 app.use('/delete', feedBackRouter);
+app.use('/put', feedBackRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

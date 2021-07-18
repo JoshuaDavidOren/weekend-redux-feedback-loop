@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import moment from 'moment';
+import Swal from 'sweetalert2'
 
 function Admin () {
 
@@ -10,16 +11,45 @@ const [feedBack, setFeedBack] = useState([])
       getFeedback();
   }, [])
 
-  const deleteThis = (index) => {
-    // event.preventDefault();
+  const deleteThisAlert = (id) => {
+  Swal.fire({
+  title: 'Are you sure you want to delete this?',
+  showDenyButton: true,
+  showCancelButton: false,
+  confirmButtonText: `Don't Delete`,
+  denyButtonText: `Delete`,
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+  if (result.isConfirmed) {
+    Swal.fire('Cancled Delete', '', 'success')
+  } else if (result.isDenied) {
+    Swal.fire('Deleted', '', 'info')
+    deleteThis(id);
+  }
+})
+}
 
-   axios.delete(`/delete/${index}`)
+  const deleteThis = (id) => {
+
+   axios.delete(`/delete/${id}`)
    .then((response) => {
        console.log('Delete',response);
         getFeedback();
    })
    .catch((err) => {
        console.log('DELETE error', err);
+   });   
+  };
+
+  const flagThis = (id) => {
+
+   axios.put(`/put/${id}`)
+   .then((response) => {
+       console.log('PUT',response);
+        getFeedback();
+   })
+   .catch((err) => {
+       console.log('PUT error', err);
    });   
   };
 
@@ -57,13 +87,13 @@ const getFeedback = () => {
                 <td>{each.comments}</td>
 
                 <td><h3>Flagged</h3></td>
-                <td>{String(each.flagged)}</td> 
+                <td><button onClick={(event) => flagThis(each.id)}>{String(each.flagged)}</button></td> 
 
                 <td><h3>Date</h3></td>
                 <td> {moment(each.date).format('MMMM Do YYYY')};</td>
 
                  <td><h3>Delete</h3></td>
-                <td> <button onClick={(event) => deleteThis(each.id)}>Bye</button></td>
+                <td> <button onClick={(event) => deleteThisAlert(each.id)}>Bye</button></td>
             </tr>
             )}
         </tbody>
