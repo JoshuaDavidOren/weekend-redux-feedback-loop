@@ -8,6 +8,7 @@ import ScreenThree from '../ScreenThree/ScreenThree';
 import ScreenFour from '../ScreenFour/ScreenFour';
 import ScreenFive from '../ScreenFive/ScreenFive';
 import Success from '../Success/Success';
+import Admin from '../Admin/Admin';
 
 function App() {
 
@@ -35,6 +36,9 @@ function App() {
       </Route>
       <Route path='/success' exact>
         <Success />
+      </Route>
+      <Route path='/admin' exact>
+        <Admin />
       </Route>
       </div>
     </Router>

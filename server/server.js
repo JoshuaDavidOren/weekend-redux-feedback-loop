@@ -11,6 +11,8 @@ app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 app.use('/post', feedBackRouter);
+app.use('/get', feedBackRouter);
+app.use('/delete', feedBackRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

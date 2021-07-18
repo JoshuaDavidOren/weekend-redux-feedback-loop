@@ -27,4 +27,30 @@ router.post("/", (req, res) => {
         });
 });
 
+// GET all feedback that have been placed.
+router.get('/', (req, res) => {
+
+    pool.query('SELECT * FROM "feedback";').then((result) => {
+        res.send(result.rows);
+    }).catch((err) => {
+        console.log('Error GET ', err);
+        res.sendStatus(500);
+    });
+})
+
+router.delete('/:id', (req, res) => {
+    qText = 'DELETE FROM "feedback" WHERE "id" = $1';
+    pool
+        .query(qText, [req.params.id])
+        .then((result) => {
+            console.log(qText);
+            console.log(req.params.id);
+            res.sendStatus(201);
+        })
+        .catch((err) => {
+            console.log("Error DELETing", err);
+            res.sendStatus(500);
+        });
+})
+
 module.exports = router;
