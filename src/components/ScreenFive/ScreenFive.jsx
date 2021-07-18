@@ -87,7 +87,7 @@ return(
         </tbody>
     </table>
     <button onClick={() => historyTheClick()}>Back</button>
-    <button onClick={() => handleTheClick()}>Next</button>
+    <button onClick={() => handleTheClick()}>Submit</button>
 </section>
 )
 }

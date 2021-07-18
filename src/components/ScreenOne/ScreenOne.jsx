@@ -31,6 +31,7 @@ return(
     <table>
         <tbody>
         <tr>
+            <td></td>
   <td><input value='1' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)} required/><h4>1</h4></td>
   <td><input value='2' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)} /><h4>2</h4></td>
   <td><input value='3' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)}/><h4>3</h4></td>
@@ -41,10 +42,12 @@ return(
   <td><input value='8' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)} /><h4>8</h4></td>
   <td><input value='9' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)}/><h4>9</h4></td>
   <td><input value='10' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)} /><h4>10</h4></td>
-  <td>:</td>
-  <td>{answer}</td>
   </tr>
   </tbody>
+  <tfoot>
+      <td>Answer:</td>
+      <td>{answer}</td>
+  </tfoot>
 </table>
     <button type='submit'>Next</button>
 </form>
