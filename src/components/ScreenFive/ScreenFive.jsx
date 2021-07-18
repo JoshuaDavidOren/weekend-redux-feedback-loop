@@ -54,7 +54,7 @@ const handleTheClick = () => {
         type: "cameled_SCREAMS-with_SNAKES-and_CABOBS-case",
         payload: ''
     });
-    history.push('/');
+    history.push('/success');
 
 }
 //This button handles the traversing pages and dispatching information. 

@@ -3,10 +3,11 @@ import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom'
 import './App.css';
 import ScreenTwo from '../ScreenTwo/ScreenTwo';
-import ScreenOne from './ScreenOne/ScreenOne';
+import ScreenOne from '../ScreenOne/ScreenOne';
 import ScreenThree from '../ScreenThree/ScreenThree';
 import ScreenFour from '../ScreenFour/ScreenFour';
 import ScreenFive from '../ScreenFive/ScreenFive';
+import Success from '../Success/Success';
 
 function App() {
 
@@ -31,6 +32,9 @@ function App() {
       </Route>
       <Route path='/screenfive' exact>
         <ScreenFive />
+      </Route>
+      <Route path='/success' exact>
+        <Success />
       </Route>
       </div>
     </Router>

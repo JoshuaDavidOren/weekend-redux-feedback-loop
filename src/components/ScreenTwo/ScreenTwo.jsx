@@ -1,14 +1,15 @@
 import "./ScreenTwo.css";
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
 
 function ScreenTwo() {
-
+const supportReducer = useSelector((store) => store.supportReducer);
 const dispatch = useDispatch();
 const history = useHistory();
 const [support, setSupport] = useState('');
+const [answer, setAnswer] = useState(`${supportReducer}`)
 
 const historyTheClick = () => {
     event.preventDefault();
@@ -44,6 +45,8 @@ return(
   <td><input value='8' type="radio" name='support' onChange={(evt) => setSupport(evt.target.value)} /><h4>8</h4></td>
   <td><input value='9' type="radio" name='support' onChange={(evt) => setSupport(evt.target.value)}/><h4>9</h4></td>
   <td><input value='10' type="radio" name='support' onChange={(evt) => setSupport(evt.target.value)} /><h4>10</h4></td>
+  <td>:</td>
+  <td>{answer}</td>
   </tr>
   </tbody>
 </table>

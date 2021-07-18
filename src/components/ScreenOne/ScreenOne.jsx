@@ -1,22 +1,19 @@
 import "./ScreenOne.css";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
 
 function ScreenOne() {
-
+const feelingsReducer = useSelector((store) => store.feelingsReducer);
 const dispatch = useDispatch();
 const history = useHistory();
 const [feelings, setFeelings] = useState('');
-
+const [answer, setAnswer] = useState(`${feelingsReducer}`)
 
 
 const handleTheClick = () => {
     event.preventDefault();
-    if(feelings === '') {
-        alert('you must choose a number')
-    }
 
     dispatch({
         type: "SCREAMING-CABOB-CASE",
@@ -44,6 +41,8 @@ return(
   <td><input value='8' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)} /><h4>8</h4></td>
   <td><input value='9' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)}/><h4>9</h4></td>
   <td><input value='10' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)} /><h4>10</h4></td>
+  <td>:</td>
+  <td>{answer}</td>
   </tr>
   </tbody>
 </table>

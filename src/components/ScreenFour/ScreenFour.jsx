@@ -1,14 +1,15 @@
 import "./ScreenFour.css";
 import { useState } from "react";
- import { useDispatch } from "react-redux";
+ import { useDispatch, useSelector } from "react-redux";
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
 
 function ScreenFour() {
-
+const commentsReducer = useSelector((store) => store.commentsReducer);
 const dispatch = useDispatch();
 const history = useHistory();
 const [comments, setComments] = useState('');
+const [answer, setAnswer] = useState(`${commentsReducer}`)
 
 const historyTheClick = () => {
     event.preventDefault();
@@ -31,6 +32,7 @@ return(
 <section>
     <h1>Leave a comment on how you feel</h1>
     <input type="text" placeholder='Put your thoughts here' onChange={(evt) => setComments(evt.target.value)}/>
+    <p>{answer}</p>
    <button onClick={() => historyTheClick()}>Back</button>
    <button onClick={() => handleTheClick()}>Next</button>
 </section>

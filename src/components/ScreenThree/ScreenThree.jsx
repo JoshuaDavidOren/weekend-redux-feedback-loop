@@ -1,14 +1,15 @@
 import "./ScreenThree.css";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
 
 function ScreenThree() {
-
+const understandingReducer = useSelector((store) => store.understandingReducer);
 const dispatch = useDispatch();
 const history = useHistory();
 const [understanding, setUnderstanding] = useState('');
+const [answer, setAnswer] = useState(`${understandingReducer}`)
 
 const historyTheClick = () => {
     event.preventDefault();
@@ -44,6 +45,8 @@ return(
   <td><input value='8' type="radio" name='understanding' onChange={(evt) => setUnderstanding(evt.target.value)} /><h4>8</h4></td>
   <td><input value='9' type="radio" name='understanding' onChange={(evt) => setUnderstanding(evt.target.value)}/><h4>9</h4></td>
   <td><input value='10' type="radio" name='understanding' onChange={(evt) => setUnderstanding(evt.target.value)} /><h4>10</h4></td>
+  <td>:</td>
+  <td>{answer}</td>
   </tr>
   </tbody>
 </table>
