@@ -30,11 +30,11 @@ const handleTheClick = () => {
 return(
 <form onSubmit={handleTheClick}>
     <h1>On a scale of 1-10</h1>
-    <h1>How well do you feel you understand?</h1>
+    <h1>How well do you feel you understand this weeks content?</h1>
     <table>
         <tbody>
         <tr>
-  <td><input value='1' type="radio" name='understanding' onChange={(evt) => setUnderstanding(evt.target.value)} /><h4>1</h4></td>
+  <td><input value='1' type="radio" name='understanding' onChange={(evt) => setUnderstanding(evt.target.value)} required/><h4>1</h4></td>
   <td><input value='2' type="radio" name='understanding' onChange={(evt) => setUnderstanding(evt.target.value)} /><h4>2</h4></td>
   <td><input value='3' type="radio" name='understanding' onChange={(evt) => setUnderstanding(evt.target.value)}/><h4>3</h4></td>
   <td><input value='4' type="radio" name='understanding' onChange={(evt) => setUnderstanding(evt.target.value)} /><h4>4</h4></td>
@@ -47,8 +47,8 @@ return(
   </tr>
   </tbody>
 </table>
+<button onClick={() => historyTheClick()}>Back</button>
     <button type='submit'>Next</button>
-    <button onClick={() => historyTheClick()}>Back</button>
 </form>
 )
 }

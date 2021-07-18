@@ -31,8 +31,8 @@ return(
 <section>
     <h1>Leave a comment on how you feel</h1>
     <input type="text" placeholder='Put your thoughts here' onChange={(evt) => setComments(evt.target.value)}/>
-    <button onClick={() => handleTheClick()}>Next</button>
-    <button onClick={() => historyTheClick()}>Back</button>
+   <button onClick={() => historyTheClick()}>Back</button>
+   <button onClick={() => handleTheClick()}>Next</button>
 </section>
 )
 }

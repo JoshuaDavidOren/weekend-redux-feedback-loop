@@ -34,7 +34,7 @@ return(
     <table>
         <tbody>
         <tr>
-  <td><input value='1' type="radio" name='support' onChange={(evt) => setSupport(evt.target.value)} /><h4>1</h4></td>
+  <td><input value='1' type="radio" name='support' onChange={(evt) => setSupport(evt.target.value)} required/><h4>1</h4></td>
   <td><input value='2' type="radio" name='support' onChange={(evt) => setSupport(evt.target.value)} /><h4>2</h4></td>
   <td><input value='3' type="radio" name='support' onChange={(evt) => setSupport(evt.target.value)}/><h4>3</h4></td>
   <td><input value='4' type="radio" name='support' onChange={(evt) => setSupport(evt.target.value)} /><h4>4</h4></td>
@@ -47,8 +47,8 @@ return(
   </tr>
   </tbody>
 </table>
+<button onClick={() => historyTheClick()}>Back</button>
     <button type='submit'>Next</button>
-    <button onClick={() => historyTheClick()}>Back</button>
 </form>
 )
 }

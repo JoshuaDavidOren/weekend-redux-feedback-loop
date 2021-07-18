@@ -8,7 +8,7 @@ function ScreenOne() {
 
 const dispatch = useDispatch();
 const history = useHistory();
-const [feelings, setfeelings] = useState('');
+const [feelings, setFeelings] = useState('');
 
 
 
@@ -34,16 +34,16 @@ return(
     <table>
         <tbody>
         <tr>
-  <td><input value='1' type="radio" name='feelings' onChange={(evt) => setfeelings(evt.target.value)} /><h4>1</h4></td>
-  <td><input value='2' type="radio" name='feelings' onChange={(evt) => setfeelings(evt.target.value)} /><h4>2</h4></td>
-  <td><input value='3' type="radio" name='feelings' onChange={(evt) => setfeelings(evt.target.value)}/><h4>3</h4></td>
-  <td><input value='4' type="radio" name='feelings' onChange={(evt) => setfeelings(evt.target.value)} /><h4>4</h4></td>
-  <td><input value='5' type="radio" name='feelings' onChange={(evt) => setfeelings(evt.target.value)}/><h4>5</h4></td>
-  <td><input value='6' type="radio" name='feelings' onChange={(evt) => setfeelings(evt.target.value)} /><h4>6</h4></td>
-  <td><input value='7' type="radio" name='feelings' onChange={(evt) => setfeelings(evt.target.value)}/><h4>7</h4></td>
-  <td><input value='8' type="radio" name='feelings' onChange={(evt) => setfeelings(evt.target.value)} /><h4>8</h4></td>
-  <td><input value='9' type="radio" name='feelings' onChange={(evt) => setfeelings(evt.target.value)}/><h4>9</h4></td>
-  <td><input value='10' type="radio" name='feelings' onChange={(evt) => setfeelings(evt.target.value)} /><h4>10</h4></td>
+  <td><input value='1' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)} required/><h4>1</h4></td>
+  <td><input value='2' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)} /><h4>2</h4></td>
+  <td><input value='3' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)}/><h4>3</h4></td>
+  <td><input value='4' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)} /><h4>4</h4></td>
+  <td><input value='5' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)}/><h4>5</h4></td>
+  <td><input value='6' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)} /><h4>6</h4></td>
+  <td><input value='7' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)}/><h4>7</h4></td>
+  <td><input value='8' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)} /><h4>8</h4></td>
+  <td><input value='9' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)}/><h4>9</h4></td>
+  <td><input value='10' type="radio" name='feelings' onChange={(evt) => setFeelings(evt.target.value)} /><h4>10</h4></td>
   </tr>
   </tbody>
 </table>
